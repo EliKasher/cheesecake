@@ -1,0 +1,13 @@
+[gd_scene format=2]
+
+[node name="First Scene" type="Node2D"]
+
+[node name="First Scene" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "First Scene"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 0, -1 )
+current = true
+zoom = Vector2( 0.5, 0.5 )
