@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://dialog.gd" type="Script" id=1]
+[ext_resource path="res://soul.tscn" type="PackedScene" id=2]
 
 [sub_resource type="ShaderMaterial" id=5]
 
@@ -97,10 +98,16 @@ anchor_bottom = 1.0
 margin_left = -41.787
 margin_top = -43.561
 margin_right = -1.78357
-margin_bottom = -3.56081
+margin_bottom = -3.56076
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Dialog/Next"]
 root_node = NodePath("../..")
 autoplay = "waiting"
 anims/RESET = SubResource( 3 )
 anims/waiting = SubResource( 4 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Soul" parent="CanvasLayer" instance=ExtResource( 2 )]
+margin_right = 0.0
+margin_bottom = 0.0

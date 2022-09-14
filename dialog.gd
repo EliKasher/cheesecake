@@ -1,16 +1,16 @@
 extends Control
 
-var dialog = ['Hi, how are you doing?', 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA']
+var dialog = ['Your soul goes up', 'Your soul goes down']
 var text_speed = 0.01
 
 var dialog_index = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$RichTextLabel.bbcode_text = ''
+	$RichTextLabel.bbcode_text = ""
 	load_dialog()
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		load_dialog()
 	
@@ -24,6 +24,7 @@ func load_dialog():
 			Tween.TRANS_LINEAR, Tween.EASE_IN_OUT
 		)
 		$Tween.start()
+		Game.soul -= 50
 	else:
 		queue_free()
 	dialog_index += 1
