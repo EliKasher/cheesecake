@@ -102,8 +102,6 @@ size_flags_vertical = 3
 margin_right = 1860.0
 margin_bottom = 20.0
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Balloon/Margin/VBox/Responses"]
-
 [node name="ResponseTemplate" type="RichTextLabel" parent="Balloon/Margin/VBox"]
 margin_top = 995.0
 margin_right = 1860.0
