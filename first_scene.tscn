@@ -1,6 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://dialog.gd" type="Script" id=1]
+[ext_resource path="res://dialogue.gd" type="Script" id=1]
+[ext_resource path="res://soul.tscn" type="PackedScene" id=2]
+[ext_resource path="res://interface.gd" type="Script" id=3]
 
 [sub_resource type="ShaderMaterial" id=5]
 
@@ -46,6 +48,7 @@ tracks/0/keys = {
 }
 
 [node name="First Scene" type="Node2D"]
+script = ExtResource( 3 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 0, -1 )
@@ -96,11 +99,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -41.787
 margin_top = -43.561
-margin_right = -1.78357
-margin_bottom = -3.56081
+margin_right = -1.78394
+margin_bottom = -3.56079
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Dialog/Next"]
 root_node = NodePath("../..")
 autoplay = "waiting"
 anims/RESET = SubResource( 3 )
 anims/waiting = SubResource( 4 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Soul" parent="CanvasLayer" instance=ExtResource( 2 )]
+margin_right = 420.0
+margin_bottom = 70.0

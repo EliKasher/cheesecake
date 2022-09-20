@@ -1,12 +1,18 @@
 extends Control
 
-var dialog = ['Your soul goes up', 'Your soul goes down']
+var soul_up: bool = false
+
 var text_speed = 0.01
 
 var dialog_index = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var resource = preload("res://dialogues.tres")
+	DialogueManager.show_example_dialogue_balloon(\
+	"demo", \
+	resource
+	)
 	$RichTextLabel.bbcode_text = ""
 	load_dialog()
 
