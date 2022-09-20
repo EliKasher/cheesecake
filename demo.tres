@@ -1,0 +1,273 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://addons/dialogue_manager/dialogue_resource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+resource_version = 11
+syntax_version = 2
+raw_text = "~ demo
+
+Bakery Lady: We don't have that... [speed=0.1]thing.
+Nikola: What is happening?
+set soul_up = false
+
+if soul_up == true
+	do _soul_up()
+	Mystical Voice: Your soul goes up
+	
+else
+	do _soul_down()
+	Mystical Voice: Your soul goes down
+	
+Nikola: This is a clue!
+
+set soul_up = true
+
+if soul_up == true
+	do _soul_up()
+	Mystical Voice: Your soul goes up
+else
+	do _soul_down()
+	Mystical Voice: Your soul goes down"
+errors = [  ]
+titles = {
+"demo": "2"
+}
+lines = {
+"0": {
+"next_id": "2",
+"text": "demo",
+"type": "title"
+},
+"10": {
+"next_conditional_id": "14",
+"next_id": "11",
+"next_id_after": "14",
+"type": "condition"
+},
+"11": {
+"mutation": {
+"expression": [ {
+"function": "_soul_down",
+"type": "function",
+"value": [  ]
+} ]
+},
+"next_id": "12",
+"parent_id": "10",
+"type": "mutation"
+},
+"12": {
+"character": "Mystical Voice",
+"character_replacements": [  ],
+"inline_mutations": [  ],
+"next_id": "14",
+"parent_id": "10",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "Your soul goes down",
+"time": null,
+"translation_key": "Your soul goes down",
+"type": "dialogue"
+},
+"14": {
+"character": "Nikola",
+"character_replacements": [  ],
+"inline_mutations": [  ],
+"next_id": "16",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "This is a clue!",
+"time": null,
+"translation_key": "This is a clue!",
+"type": "dialogue"
+},
+"16": {
+"mutation": {
+"expression": [ {
+"type": "variable",
+"value": "soul_up"
+}, {
+"type": "assignment",
+"value": "="
+}, {
+"type": "bool",
+"value": true
+} ]
+},
+"next_id": "18",
+"type": "mutation"
+},
+"18": {
+"condition": {
+"expression": [ {
+"type": "variable",
+"value": "soul_up"
+}, {
+"type": "comparison",
+"value": "=="
+}, {
+"type": "bool",
+"value": true
+} ]
+},
+"next_conditional_id": "21",
+"next_id": "19",
+"next_id_after": "end!",
+"type": "condition"
+},
+"19": {
+"mutation": {
+"expression": [ {
+"function": "_soul_up",
+"type": "function",
+"value": [  ]
+} ]
+},
+"next_id": "20",
+"parent_id": "18",
+"type": "mutation"
+},
+"2": {
+"character": "Bakery Lady",
+"character_replacements": [  ],
+"inline_mutations": [  ],
+"next_id": "3",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [ [ 22, 0.1 ] ],
+"text": "We don't have that... thing.",
+"time": null,
+"translation_key": "We don't have that... thing.",
+"type": "dialogue"
+},
+"20": {
+"character": "Mystical Voice",
+"character_replacements": [  ],
+"inline_mutations": [  ],
+"next_id": "end!",
+"parent_id": "18",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "Your soul goes up",
+"time": null,
+"translation_key": "Your soul goes up",
+"type": "dialogue"
+},
+"21": {
+"next_conditional_id": "end!",
+"next_id": "22",
+"next_id_after": "end!",
+"type": "condition"
+},
+"22": {
+"mutation": {
+"expression": [ {
+"function": "_soul_down",
+"type": "function",
+"value": [  ]
+} ]
+},
+"next_id": "23",
+"parent_id": "21",
+"type": "mutation"
+},
+"23": {
+"character": "Mystical Voice",
+"character_replacements": [  ],
+"inline_mutations": [  ],
+"next_id": "end!",
+"parent_id": "21",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "Your soul goes down",
+"time": null,
+"translation_key": "Your soul goes down",
+"type": "dialogue"
+},
+"3": {
+"character": "Nikola",
+"character_replacements": [  ],
+"inline_mutations": [  ],
+"next_id": "4",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "What is happening?",
+"time": null,
+"translation_key": "What is happening?",
+"type": "dialogue"
+},
+"4": {
+"mutation": {
+"expression": [ {
+"type": "variable",
+"value": "soul_up"
+}, {
+"type": "assignment",
+"value": "="
+}, {
+"type": "bool",
+"value": false
+} ]
+},
+"next_id": "6",
+"type": "mutation"
+},
+"6": {
+"condition": {
+"expression": [ {
+"type": "variable",
+"value": "soul_up"
+}, {
+"type": "comparison",
+"value": "=="
+}, {
+"type": "bool",
+"value": true
+} ]
+},
+"next_conditional_id": "10",
+"next_id": "7",
+"next_id_after": "14",
+"type": "condition"
+},
+"7": {
+"mutation": {
+"expression": [ {
+"function": "_soul_up",
+"type": "function",
+"value": [  ]
+} ]
+},
+"next_id": "8",
+"parent_id": "6",
+"type": "mutation"
+},
+"8": {
+"character": "Mystical Voice",
+"character_replacements": [  ],
+"inline_mutations": [  ],
+"next_id": "14",
+"parent_id": "6",
+"pauses": {
+},
+"replacements": [  ],
+"speeds": [  ],
+"text": "Your soul goes up",
+"time": null,
+"translation_key": "Your soul goes up",
+"type": "dialogue"
+}
+}

@@ -29,6 +29,7 @@ config/icon="res://icon.png"
 Game="*res://game.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 Interface="*res://interface.gd"
+Dialogue="*res://dialogue.gd"
 
 [editor_plugins]
 

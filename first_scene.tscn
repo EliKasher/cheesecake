@@ -1,115 +1,22 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://dialogue.gd" type="Script" id=1]
+[ext_resource path="res://demo/balloon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://soul.tscn" type="PackedScene" id=2]
-[ext_resource path="res://interface.gd" type="Script" id=3]
-
-[sub_resource type="ShaderMaterial" id=5]
-
-[sub_resource type="Shader" id=6]
-
-[sub_resource type="ShaderMaterial" id=7]
-next_pass = SubResource( 5 )
-shader = SubResource( 6 )
-
-[sub_resource type="QuadMesh" id=1]
-
-[sub_resource type="Theme" id=2]
-
-[sub_resource type="Animation" id=3]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("Next:rect_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 479.213, 52.439 ) ]
-}
-
-[sub_resource type="Animation" id=4]
-resource_name = "waiting"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Next:rect_position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 479.213, 52.439 ), Vector2( 479.213, 51 ) ]
-}
+[ext_resource path="res://dialogue.gd" type="Script" id=3]
 
 [node name="First Scene" type="Node2D"]
 script = ExtResource( 3 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 0, -1 )
-current = true
-zoom = Vector2( 0.5, 0.5 )
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-material = SubResource( 7 )
-position = Vector2( 5.68434e-14, 4 )
-scale = Vector2( 534, 312 )
-mesh = SubResource( 1 )
-
-[node name="Dialog" type="Control" parent="."]
-modulate = Color( 0.0392157, 0.443137, 0.505882, 1 )
-self_modulate = Color( 0.0235294, 0.262745, 0.262745, 1 )
-margin_left = -260.0
-margin_top = 58.0
-margin_right = 261.0
-margin_bottom = 154.0
-theme = SubResource( 2 )
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Texture" type="TextureRect" parent="Dialog"]
-modulate = Color( 0.0666667, 0.419608, 0.439216, 1 )
-self_modulate = Color( 0.109804, 0.627451, 0.603922, 1 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Dialog"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = 10.0
-margin_right = -10.0
-margin_bottom = -10.0
-bbcode_enabled = true
-
-[node name="Tween" type="Tween" parent="Dialog"]
-
-[node name="Next" type="TextureRect" parent="Dialog"]
-modulate = Color( 0.0509804, 0.513726, 0.462745, 1 )
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -41.787
-margin_top = -43.561
-margin_right = -1.78394
-margin_bottom = -3.56079
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Dialog/Next"]
-root_node = NodePath("../..")
-autoplay = "waiting"
-anims/RESET = SubResource( 3 )
-anims/waiting = SubResource( 4 )
+[node name="ExampleBalloon" parent="." instance=ExtResource( 1 )]
+response_template = NodePath("")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Soul" parent="CanvasLayer" instance=ExtResource( 2 )]
 margin_right = 420.0
 margin_bottom = 70.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 0, -1 )
+current = true
+zoom = Vector2( 0.5, 0.5 )
