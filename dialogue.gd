@@ -15,3 +15,7 @@ func _soul_up():
 
 func _soul_down():
 	Game.soul -= 50
+	if Game.soul <= 0:
+		get_tree().change_scene("res://game_over.tscn")
+	else:
+		pass
