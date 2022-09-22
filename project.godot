@@ -8,16 +8,6 @@
 
 config_version=4
 
-_global_script_classes=[ {
-"base": "Resource",
-"class": "DialogueResource",
-"language": "GDScript",
-"path": "res://addons/dialogue_manager/dialogue_resource.gd"
-} ]
-_global_script_class_icons={
-"DialogueResource": ""
-}
-
 [application]
 
 config/name="Where The Cheesecakes Go"
@@ -33,7 +23,7 @@ Dialogue="*res://dialogue.gd"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/dialogue_manager/plugin.cfg" )
+enabled=PoolStringArray(  )
 
 [gui]
 
