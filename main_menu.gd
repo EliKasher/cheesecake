@@ -11,11 +11,11 @@ func _ready():
 	play.connect("pressed", self, "_on_play_pressed")
 
 func _on_play_pressed():
-	get_tree().change_scene("res://first_scene.tscn")
+	get_tree().change_scene("res://scenes/first_scene.tscn")
 	
 func _on_exit_pressed():
 	get_tree().quit()
 	
 func _on_credits_pressed():
-	get_tree().change_scene("res://credits.tscn")
+	get_tree().change_scene("res://scenes/credits.tscn")
 
