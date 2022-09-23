@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://scenes/first_scene.gd" type="Script" id=1]
+[ext_resource path="res://first_scene.gd" type="Script" id=1]
 [ext_resource path="res://scenes/soul.tscn" type="PackedScene" id=2]
 [ext_resource path="res://dialogue.gd" type="Script" id=3]
 [ext_resource path="res://scenes/fondo_demo.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/characters/bakery_lady/sad.png" type="Texture" id=5]
+[ext_resource path="res://Assets/characters/factory_guy/4_thinking.png" type="Texture" id=6]
+[ext_resource path="res://Assets/characters/nikola/1.png" type="Texture" id=7]
+[ext_resource path="res://detective.gd" type="Script" id=9]
 
 [node name="First Scene" type="Node2D"]
 script = ExtResource( 1 )
@@ -22,3 +26,31 @@ zoom = Vector2( 0.5, 0.5 )
 script = ExtResource( 3 )
 
 [node name="Background" parent="." instance=ExtResource( 4 )]
+
+[node name="Detective" type="Node2D" parent="."]
+position = Vector2( -300, 0 )
+scale = Vector2( 0.3, 0.3 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Texture" type="Sprite" parent="Detective"]
+texture = ExtResource( 7 )
+
+[node name="BakeryLady" type="Node2D" parent="."]
+position = Vector2( 300, 50 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="Texture" type="Sprite" parent="BakeryLady"]
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="FactoryGuy" type="Node2D" parent="."]
+position = Vector2( 300, 50 )
+scale = Vector2( 0.25, 0.25 )
+
+[node name="Texture" type="Sprite" parent="FactoryGuy"]
+texture = ExtResource( 6 )
