@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
+
 resource_version = 28
 syntax_version = 2
 raw_text = "~ demo
@@ -31,6 +32,7 @@ Nikola: What!!?
 
 do _soul_down()
 do _soul_down()"
+
 errors = [  ]
 titles = {
 "demo": "1"
@@ -224,6 +226,7 @@ lines = {
 "type": "mutation"
 },
 "5": {
+
 "character": "Nikola",
 "character_replacements": [  ],
 "inline_mutations": [  ],
