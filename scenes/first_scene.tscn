@@ -20,6 +20,7 @@ margin_bottom = 70.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 0, -1 )
+current = true
 zoom = Vector2( 0.5, 0.5 )
 
 [node name="Dialogue" type="CanvasLayer" parent="."]
@@ -31,9 +32,6 @@ script = ExtResource( 3 )
 position = Vector2( -300, 0 )
 scale = Vector2( 0.3, 0.3 )
 script = ExtResource( 9 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Texture" type="Sprite" parent="Detective"]
 texture = ExtResource( 7 )
@@ -44,9 +42,6 @@ scale = Vector2( 0.4, 0.4 )
 
 [node name="Texture" type="Sprite" parent="BakeryLady"]
 texture = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="FactoryGuy" type="Node2D" parent="."]
 position = Vector2( 300, 50 )

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://MarginContainer.gd" type="Script" id=1]
+[ext_resource path="res://pause_menu.gd" type="Script" id=1]
 
 [node name="PauseMenu" type="Node2D"]
 
@@ -43,3 +43,8 @@ margin_right = 84.0
 margin_bottom = 86.0
 rect_pivot_offset = Vector2( -95, -51 )
 text = "Exit"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 155, 94 )
+current = true
+zoom = Vector2( 0.3, 0.3 )

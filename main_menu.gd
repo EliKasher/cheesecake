@@ -4,7 +4,6 @@ onready var play = $MarginContainer/VBoxContainer/Play
 onready var credits = $MarginContainer/VBoxContainer/Credits
 onready var exit = $MarginContainer/VBoxContainer/Exit
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	exit.connect("pressed", self, "_on_exit_pressed")
 	credits.connect("pressed", self, "_on_credits_pressed")

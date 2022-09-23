@@ -22,7 +22,7 @@ func _on_resume_pressed():
 	visible = false
 
 func _on_main_menu_pressed():
-	get_tree().change_scene("res://main_menu.tscn")
+	get_tree().change_scene("res://scenes/main_menu.tscn")
 	get_tree().paused = false
 	
 func _on_exit_pressed():

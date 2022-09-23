@@ -15,6 +15,9 @@ func _soul_up():
 func _soul_down():
 	Game.soul -= 50
 	_sad()
+	if(Game.soul <= 0):
+# warning-ignore:return_value_discarded
+		get_tree().change_scene("res://scenes/game_over.tscn")
 
 func _serious():
 	Game.expression = serious_expression
@@ -30,11 +33,9 @@ func _surprised():
 
 func _bakery_lady_out():
 	$BakeryLady/Texture.visible = false
-	
+
 func _factory_guy_out():
 	$FactoryGuy/Texture.visible = false
 
 func _factory_guy_in():
 	$FactoryGuy/Texture.visible = true
-
-	
